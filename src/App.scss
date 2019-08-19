@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+
+
+.App-container {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+  }
+
+  .zg-game-container {
+		background: yellow;
+
+	.zg-game {
+		width: 340px;
+		height: 340px;
+		background: pink;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+
+		.box {
+			height: 100px;
+			width: 100px;
+			border: green;
+			background: orange;
+			border-style: solid;
+			border-color: red;
+
+			button {
+				height: 95px;
+				width: 95px;
+
+				.x {
+					height: 80px;
+					width: 80px;
+				}
+			}
+
+			// // align-self: stretch;
+            // order: 0;
+            // flex: 0 0 0px;
+            // flex-grow: 0;
+            // flex-shrink: 0;
+		}
+	}
+  }
+}
