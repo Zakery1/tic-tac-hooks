@@ -22,20 +22,25 @@ function App() {
 
 	const clickBox = (index) => {
 		const newBoxData = gameBoxes.slice();
-		newBoxData[index] = 'X';
+
+		if(turn === 'X') {
+			newBoxData[index] = 'X';
+		} else {
+			newBoxData[index] = 'O';
+		}
+
 		updateGameBoxes(newBoxData);
 	}
 
 	const renderBoxes = gameBoxes.map((square, index) => {
 		return <div className="box" key={index}>
 
-			<button
-				onClick={() => clickBox(index)}
-				className="game-button">
-				{square}
-			</button>
-
-		</div>
+				<button
+					onClick={() => clickBox(index)}
+					className="game-button">
+					{square}
+				</button>
+			</div>
 	});
 
 	return (
@@ -48,10 +53,12 @@ function App() {
 					If you are {turn}, its your turn
 				</p>
 
-				{turn === 'X' ? 
+				{
+					turn === 'X' ? 
 						<button onClick={() => changeTurn('O')} >Finish turn</button>
 							:
-						<button onClick={() => changeTurn('X')}>Finish turn</button>}
+						<button onClick={() => changeTurn('X')}>Finish turn</button>
+				}
 
 
 				<br />
